@@ -133,6 +133,72 @@ namespace SerialCommunication
             }
         }
 
+        private void checkBoxDigital2_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPortArduino != null && serialPortArduino.IsOpen)
+                {
+                    string cmd = checkBoxDigital2.Checked ? "set d2 high" : "set d2 low";
+                    serialPortArduino.WriteLine(cmd);
+                }
+                else
+                {
+                    labelStatus.Text = "No serial connection";
+                }
+            }
+            catch (Exception ex)
+            {
+                labelStatus.Text = "Error: " + ex.Message;
+                if (serialPortArduino != null && serialPortArduino.IsOpen)
+                    serialPortArduino.Close();
+            }
+        }
+
+        private void checkBoxDigital3_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPortArduino != null && serialPortArduino.IsOpen)
+                {
+                    string cmd = checkBoxDigital3.Checked ? "set d3 high" : "set d3 low";
+                    serialPortArduino.WriteLine(cmd);
+                }
+                else
+                {
+                    labelStatus.Text = "No serial connection";
+                }
+            }
+            catch (Exception ex)
+            {
+                labelStatus.Text = "Error: " + ex.Message;
+                if (serialPortArduino != null && serialPortArduino.IsOpen)
+                    serialPortArduino.Close();
+            }
+        }
+
+        private void checkBoxDigital4_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serialPortArduino != null && serialPortArduino.IsOpen)
+                {
+                    string cmd = checkBoxDigital4.Checked ? "set d4 high" : "set d4 low";
+                    serialPortArduino.WriteLine(cmd);
+                }
+                else
+                {
+                    labelStatus.Text = "No serial connection";
+                }
+            }
+            catch (Exception ex)
+            {
+                labelStatus.Text = "Error: " + ex.Message;
+                if (serialPortArduino != null && serialPortArduino.IsOpen)
+                    serialPortArduino.Close();
+            }
+        }
+
         private void tabPageInstellingen_Click(object sender, EventArgs e)
         {
 
